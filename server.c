@@ -102,6 +102,10 @@ int main(int argc, char *argv[])
 				if(package.esito_partita != 1)
 					FullWrite(connfd,&turno,sizeof(int));
 			} while(package.esito_partita == 0);
+			if(num_navi == 0)
+				fprintf(stdout,"############### YOU LOSE ###############\n");
+			else
+				fprintf(stdout,"############### YOU WIN ###############\n");
 			close(connfd);
 			exit(0);
 		}
