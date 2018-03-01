@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 			campo[i][j] = 1;
 		else
 		{
-			fprintf(stdout,"La posizione e gia' occupata\n");
+			fprintf(stdout,"La posizione e' gia' occupata\n");
 			t -= 1;
 		}
 	}
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 			do
 			{
 				fprintf(stdout,"Quale posizione vuoi colpire? ");
-				fscanf(stdin,"%d%d",&package->riga,&package->colonna);
+				fscanf(stdin,"%d%d",&package.riga,&package.colonna);
 			} while(verifica_input(package.riga, package.colonna) == 0);
 			FullWrite(sockfd,&package,sizeof(package));
 			while((n = FullRead(sockfd,&package,sizeof(package))) > 0);
